@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+        <meta name="author" content="Kowalski Robert">
+        <meta charset="UTF-8">
+        <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}"/>
+        <title>
+            {% block title %}
+                Counting the numbers of keywords
+            {% endblock title %}
+        </title>
+    {% endblock head %}
+</head>
+<body>
+
+<div id="content">
+
+    {% block content %}
+
+    {% endblock content %}
+</div>
+
+<div id="footer">
+
+    {% block footer %}
+    {% endblock footer %}
+</div>
+</body>
+</html>

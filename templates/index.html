@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}
+    Counting the numbers of keyword
+{% endblock title %}
+
+{% block content %}
+    <h1>Counting the number of keywords</h1>
+    <p>Enter the url</p>
+    <form method="POST" action="">
+        {{ form.csrf }}
+        {% for field in form %}
+            <tr>
+                <th>{{ field.label }} {% if field.flags.required %}*{% endif %}</th>
+                <td>{{ field }}</td>
+            </tr>
+        {% endfor %}
+        <div class="input submit" >
+            <input type="submit" value="Check"/>
+        </div>
+    </form>
+
+    <div name="result">
+        <ul>
+            {% for key, value in result_dict.items() %}
+                <li> {{ value }} - {{ key }} </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
